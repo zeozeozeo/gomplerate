@@ -115,7 +115,9 @@ func (resampler *Resampler) ResampleInt16(data []int16) (resampledi16 []int16) {
 	}
 	// Resample
 	resampledf64 := resampler.ResampleFloat64(f64data)
+
 	// Convert back to int16
+	resampledi16 = make([]int16, len(resampledf64))
 	for i := 0; i < len(resampledf64); i++ {
 		resampledi16[i] = int16(resampledf64[i] * float64(0x7FFF))
 	}
