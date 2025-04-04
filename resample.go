@@ -157,7 +157,7 @@ func (resampler *Resampler) resampleChannelData(data []float64) []float64 {
 			return data[:]
 		}
 
-		output = append(output, yo[0]/float64(0x7FFF))
+		output = append(output, yo[0])
 	}
 	return output
 }
